@@ -41,7 +41,7 @@ gulp.task('minifyCss',['less'],function(){
 });
 /*html压缩*/
 gulp.task('minifyHtml',function(){
-    return gulp.src(['src/html/**/*.html'])
+    return gulp.src('src/html/**/*.html')
         .pipe(minifyHtml())
         .pipe(gulp.dest('dist/html'))
         .pipe(livereload())
