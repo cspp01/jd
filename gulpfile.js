@@ -41,14 +41,13 @@ gulp.task('minifyCss',['less'],function(){
 });
 /*html压缩*/
 gulp.task('minifyHtml',function(){
-    return gulp.src('src/html/**/*.html')
+    return gulp.src(['src/html/**/*.html'])
         .pipe(minifyHtml())
         .pipe(gulp.dest('dist/html'))
         .pipe(livereload())
         .pipe(notify({
             message:'html压缩完成'
-        }))
-        .pipe(livereload());
+        }));
 });
 /*js代码检查*/
 gulp.task('jshint',function(){
@@ -72,10 +71,11 @@ gulp.task('minifyJs',['concatJs'],function(){
         .pipe(minifyJs())
         .pipe(rename('index.min.js'))
         .pipe(gulp.dest('dist/js'))
+        .pipe(livereload())
         .pipe(notify({
             message:'压缩js完成'
-        }))
-        .pipe(livereload());
+        }));
+
 });
 /*压缩图片*/
 gulp.task('imagemin',function(){

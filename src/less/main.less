@@ -2,8 +2,8 @@ body,html,h1{
   margin:0;
   padding:0;
 }
-body{
-  font-size: 10px;
+html{
+  font-size: 20px;
 }
 @le:relative;
 @lb:absolute;
@@ -17,34 +17,61 @@ body{
   -moz-border-radius:@p @pp @ppp @pppp;
   border-radius:@p @pp @ppp @pppp;
 }
+@toph:5rem;
 header{
   @w:100px;
   @lmargin:20px;/*左右边距*/
-  @toph:100px;
   width:100%;
   section#top1{
     background:#7a706e;
     position:@le;
-    height:@toph;
+    height:5rem;
     width:100%;
     div{
       position:@lb;
-      width:200px;
+      width:348px;
       left:@lmargin;
       height:50px;
       top:25px;
       font-size:3em;
+      background:url(../image/logo.gif);
     }
     #rightNav{
       position:@lb;
       right:@lmargin;
-      top:30px;
+      top:1.5rem;
       li{
-        @liw:40px;
+        @liw:2rem;
         width:@liw;
         height:@liw;
-        background:#00ee00;
-        margin-right:1em;
+        margin-right:0.5rem;
+        background:url(../image/icon.png);
+        &.hhome{
+          background-position:373px 139px;
+        }
+        &.hxtsz{
+          background-position:290px 139px;
+        }
+        &.hggtz{
+          background-position:205px 139px;
+        }
+        &.htc{
+          background-position:122px 139px;
+        }
+        &:active{
+          &.hhome{
+            background-position:373px 80px;
+          }
+          &.hxtsz{
+            background-position:290px 80px;
+          }
+          &.hggtz{
+            background-position:205px 80px;
+          }
+          &.htc{
+            background-position:122px 80px;
+          }
+        }
       }
     }
   }
@@ -58,32 +85,267 @@ header{
       top:25px;
       left:@lmargin;
       img{
-      @adminimgwh:50px;
+      @adminimgwh:55px;
         width:@adminimgwh;
         height:@adminimgwh;
         float:left;
         .borderjd(50%);
         margin:0 10px 0 0;
+        border:3px solid #fff;
       }
       div{
         padding:5px;
          p{
-           font-size:1.5em;
+           font-size:0.8rem;
            margin-bottom:1px;
          }
         small{
-          font-size:0.8em;
+          font-size:0.5rem;
+        }
+      }
+    }
+    #sj{
+      .sj(@sjicon){
+        div{
+          text-align: center;
+          font-size:0.8rem;
+          display:inline-block;
+          span{
+            display:block;
+            font-size:1.5rem;
+          }
+        }
+        &>span{
+          background:url(../image/sj.png);
+          background-position:@sjicon 0px;
+          background-repeat:no-repeat;
+          width:58px;
+          height:57px;
+          display:inline-block;
+          position:@lb;
+        }
+      }
+      position:@lb;
+      right:0;
+      top:0;
+      ul{
+        list-style:none;
+        li{
+          height:60px;
+          margin-top:20px;
+          float:left;
+          &:nth-child(1){
+            border-right:1px solid #bbbbbb;
+            .sj(0px);
+          }
+          &:nth-child(2){
+            .sj(-58px);
+          }
+        }
+
+      }
+    }
+  }
+}
+@nw:120px;
+.transit(@prop,@time){
+  -webkit-transition: @prop @time;
+  -moz-transition: @prop @time;
+  -ms-transition: @prop @time;
+  -o-transition: @prop @time;
+  transition: @prop @time;
+}
+nav{
+  width:@nw;
+  z-index:20;
+  background:#675d5c;
+  &>ul{
+    @iconmarginwx:64px;
+    @iconmarginwy:37px;
+    z-index:20;
+    &>li{
+      border-bottom:2px solid #675d5c;
+      a{
+        display:inline-block;
+        width:100%;
+        height:100%;
+        padding-top:8px;
+        padding-bottom:13px;
+        text-align: center;
+        color:#fff;
+        font-size:0.5rem;
+        &.active{
+          background:#00ffff;
+          .borderjds(5px,0,0,5px);
+        }
+        background:#796f6d;
+        &:hover{
+          color:#fff;
+          text-decoration: none;
+          span{
+            background:url(../image/icon.png);
+            &.home{
+            background-position:119px 291-@iconmarginwy;
+            }
+            &.sjzs{
+               background-position:119+@iconmarginwx*4 291-@iconmarginwy;
+             }
+            &.kdgsgl{
+              background-position:119+@iconmarginwx*4 291-@iconmarginwy*3;
+            }
+            &.sjtj{
+              background-position:119+@iconmarginwx*2 291-@iconmarginwy;
+            }
+            &.sjypdb{
+              background-position:119+@iconmarginwx 291-@iconmarginwy;
+            }
+            &.ggtz{
+              background-position:119+@iconmarginwx*2 291-@iconmarginwy;
+            }
+            &.sjdr{
+              background-position:119-@iconmarginwx 291-@iconmarginwy;
+            }
+            &.xtsz{
+              background-position:119+@iconmarginwx*3 291-@iconmarginwy*3;
+            }
+          }
+
+        }
+        span{
+          @iconw:30px;
+          display:inline-block;
+          padding:5px;
+          width:@iconw;
+          height:@iconw;
+          background:url(../image/icon.png);
+          .transit(background-position,1s);
+          &.home{
+            background-position:119px 291px;
+          }
+          &.sjzs{
+            background-position:119+@iconmarginwx*4 291px;
+          }
+          &.kdgsgl{
+            background-position:119+@iconmarginwx*4 291-@iconmarginwy*2;
+          }
+          &.sjtj{
+            background-position:119+@iconmarginwx*2 291px;
+          }
+          &.sjypdb{
+            background-position:119+@iconmarginwx 291px;
+          }
+          &.ggtz{
+            background-position:119+@iconmarginwx*2 291px;
+          }
+          &.sjdr{
+            background-position:119-@iconmarginwx 291px;
+          }
+          &.xtsz{
+            background-position:119+@iconmarginwx*3 291-@iconmarginwy*2;
+          }
+          &:hover{
+          }
+        }
+        .title{
+        }
+      }
+      &.menu-enu{
+        position:@le;
+        a{
+          @activeBC:#00ffff;
+          &.active{
+            background:@activeBC;
+            .borderjd(0);
+            &:after{
+              display:inline-block;
+              content:"";
+              width: 0;
+              height: 0;
+              border-top: 5px solid transparent;
+              border-left: 10px solid @activeBC;
+              border-bottom: 5px solid transparent;
+              position:@lb;
+              top:0;
+              bottom:0;
+              right:-10px;
+              margin:auto 0;
+              z-index:10;
+            }
+          }
+
+        }
+      }
+      div{
+        &.nav-menu{
+          position:@lb;
+          top:200px;
+          left:120px;
+          margin:0;
+          width:0;
+          background:#00ffff;
+          z-index:1;
+          font-size:0.5rem;
+          text-align:center;
+          display:none;
+          li{
+            padding:20px 0;
+            margin:0 15px;
+            width:90px;
+            list-style:none;
+            border-bottom:1px solid #999;
+            &:nth-child(1){
+              border-top:1px solid #999;
+              margin-top:9px;
+            }
+          }
+        }
+        .bak{
+          display:inline-block;
+          background:#00ffff;
+          width:10px;
+          height:50px;
+          position:@lb;
+          left:120px;
+          top:0;
+          bottom:0;
+          margin:auto;
+          .borderjds(0,5px,5px,0);
+          hr{
+            width:3px;
+            max-width:3px;
+            height:30px;
+            background:#999;
+            padding:0;
+            display:inline-block;
+            margin-top:10px;
+            border:none;
+            .borderjd(2px);
+            margin-right:5px;
+            margin-left:-3px;
+          }
         }
       }
     }
   }
 }
-nav{
-  width:120px;
-  height:680px;
-  background:red;
+article{
+  background:#ff;
+  height:100px;
+  position:@lb;
+  right:0;
+  top:@toph*2;
 }
 footer{
-  height:50px;
+@fh:30px;
+  z-index:-1;
+  height:@fh;
   width:100%;
+  color:#999;
+  font-size:0.5rem;
+  text-align: center;
+  padding-left:@nw/2;
+  line-height:@fh;
+  position:@lb;
+  bottom:0;
+  right:0;
 }
