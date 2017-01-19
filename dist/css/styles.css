@@ -1,0 +1,214 @@
+.metro {
+    width: 100%;
+    margin: 0 auto 0;
+}
+
+
+.metro li {
+    -webkit-transform: perspective(600px);
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin-x: 50%;
+    -webkit-transform-origin-y: 50%;
+    -ms-transform: perspective(600px);
+    -ms-transform-style: preserve-3d;
+    -ms-transform-origin-x: 50%;
+    -ms-transform-origin-y: 50%;
+    transform: perspective(600px);
+    transform-style: preserve-3d;
+    transform-origin-x: 50%;
+    transform-origin-y: 50%;
+    cursor: default;
+    position: relative;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    float: left;
+    -webkit-transition: .2s -webkit-transform, 1s opacity;
+    -ms-transition: .2s -ms-transform, 1s opacity;
+    transition: .2s transform, 1s opacity;
+    cursor:pointer;
+}
+
+.metro li i {
+    font-size: 54px;
+    margin: 35px 0 0;
+}
+
+.metro li span {
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-size: 14px;
+}
+
+.metro li:first-child {
+    background: #00b6de;
+}
+
+.metro li:nth-child(2) {
+    background: #56dea7;
+}
+
+.metro li:nth-child(3) {
+    background: #ff7659;
+    margin: 0;
+}
+
+.metro li:nth-child(4) {
+    background: #f8cd36;
+}
+
+.metro li:nth-child(5) {
+    background: #f26175;
+}
+
+.metro li:nth-child(6) {
+    background: #5ca7df;
+}
+
+.metro li:last-child {
+    background: #9e7ac2;
+    margin: 0;
+}
+
+.metro li:nth-child(5):active, .metro li:first-child:active {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.metro li:nth-child(7):active, .metro li:nth-child(2):active {
+    -webkit-transform: perspective(600px) rotate3d(1, 0, 0, -10deg);
+    -ms-transform: perspective(600px) rotate3d(1, 0, 0, -10deg);
+    transform: perspective(600px) rotate3d(1, 0, 0, -10deg);
+}
+
+.metro li:nth-child(3):active {
+    -webkit-transform: perspective(600px) rotate3d(0, 1, 0, 10deg);
+    -ms-transform: perspective(600px) rotate3d(0, 1, 0, 10deg);  
+    transform: perspective(600px) rotate3d(0, 1, 0, 10deg); 
+}
+
+.metro li:nth-child(4):active {
+    -webkit-transform: perspective(600px) rotate3d(0, 1, 0, -10deg);
+    -ms-transform: perspective(600px) rotate3d(0, 1, 0, -10deg);
+    transform: perspective(600px) rotate3d(0, 1, 0, -10deg);
+}
+
+.metro li:nth-child(6):active {
+    -webkit-transform: perspective(600px) rotate3d(1, 0, 0, 10deg);
+    -ms-transform: perspective(600px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(600px) rotate3d(1, 0, 0, 10deg);
+}
+
+/* POPUP */
+
+.box {
+    display: table;
+    visibility: hidden;
+    -webkit-transform: perspective(1200px) rotateY(180deg) scale(0.1);
+    -ms-transform: perspective(1200px) rotateY(180deg) scale(0.1);
+    transform: perspective(1200px) rotateY(180deg) scale(0.1);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 1s all;
+    left: 0;
+    top: 0;
+    bottom:0;
+    right:0;
+    position:fixed;
+    margin:auto;
+}
+
+.box p {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 64px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+    transition: .2s;
+    -webkit-transition-delay: 0.2s;
+    -ms-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.box p i {
+    font-size: 128px;
+    margin:0 0 20px;
+    display:block;
+}
+
+.box .close {
+  display:block;
+  cursor:pointer;
+  border:3px solid rgba(255, 255, 255, 1);
+  border-radius:50%;
+  position:absolute;
+  top:15px;
+  right:15px;
+  width:40px;
+  height:40px;
+  -webkit-transform:rotate(45deg);
+  -ms-transform:rotate(45deg)
+  transform:rotate(45deg);
+  transition: .2s;
+  -webkit-transition-delay: 0.2s;
+  -ms-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  opacity:0;
+}
+
+.box .close:active {
+    top:51px;
+}
+
+.box .close::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 1);
+  width: 80%;
+  height: 6%;
+  left: 10%;
+  top: 47%;
+}
+
+.box .close::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 1);
+  width: 6%;
+  height: 80%;
+  left: 47%;
+  top: 10%;
+}
+
+.box.open {
+    left: 0;
+    top: 0;
+    bottom:0;
+    right:0;
+    position:fixed;
+    margin:auto;
+    visibility: visible;
+    opacity: 1;
+    z-index: 999;
+    -webkit-transform: perspective(1200px) rotateY(0deg) scale(1);
+    -ms-transform: perspective(1200px) rotateY(0deg) scale(1);
+    transform: perspective(1200px) rotateY(0deg) scale(1);
+    width: 35%;
+    height: 35%;
+}
+
+.box.open .close, .box.open p {
+    opacity: 1;
+}

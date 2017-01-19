@@ -1,0 +1,87 @@
+@le:relative;
+@lb:absolute;
+.borderjd(@p){
+  -webkit-border-radius:@p;
+  -moz-border-radius:@p;
+  border-radius:@p;
+}
+.borderjds(@p,@pp,@ppp,@pppp){
+  -webkit-border-radius:@p @pp @ppp @pppp;
+  -moz-border-radius:@p @pp @ppp @pppp;
+  border-radius:@p @pp @ppp @pppp;
+}
+.transit(@prop,@time){
+  -webkit-transition: @prop @time;
+  -moz-transition: @prop @time;
+  -ms-transition: @prop @time;
+  -o-transition: @prop @time;
+  transition: @prop @time;
+}
+.transitt(@prop1,@time1,@prop2,@time2){
+  -webkit-transition: @prop1 @time1,@prop2 @time2;
+  -moz-transition: @prop1 @time1,@prop2 @time2;
+  -ms-transition: @prop1 @time1,@prop2 @time2;
+  -o-transition: @prop1 @time1,@prop2 @time2;
+  transition: @prop1 @time1,@prop2 @time2;
+}
+.sjx(@1,@2,@3,@4){
+  border-top: @1 solid transparent;
+  border-left: @2 solid @4;
+  border-bottom: @3 solid transparent;
+}
+.box-shadow(@1,@2,@3,@4,@5){
+  -webkit-box-shadow: @1 @2 @3 @4 @5;
+  -moz-box-shadow: @1 @2 @3 @4 @5;
+  box-shadow: @1 @2 @3 @4 @5;
+}
+.fy{
+    margin:0;
+    padding:0;
+    li{
+      a{
+        .borderjd(50%);
+        margin:0 3px;
+        color:@mainColor;
+      }
+      &:first-child,&:last-child{
+        a{
+          border:none;
+        }
+        border:none;
+      }
+      &.active{
+        a{
+          background:@mainColor;
+          border-color:@mainColor;
+          color:#fff;
+        }
+
+      }
+    }
+
+
+  }
+.clearPadding{
+  padding:0 5px;
+  line-height:30px;
+}
+@mainColor:#8a9ed2;
+@mainTableColor:#8ad1d2;
+@activeBC:#8bf1dc;/*nav active颜色*/
+table.tab{
+  text-align: center;
+  tr{
+    &:first-child{
+      background:#fddede;
+      font-size: 0.9rem;
+      font-weight:bold;
+    }
+    &:nth-child(2n+3){
+      background:#faecea;
+    }
+    .metro{
+      width:135px;
+    }
+  }
+
+}

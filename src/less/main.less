@@ -4,19 +4,9 @@ body,html,h1{
 }
 html{
   font-size: 20px;
+  overflow:hidden;
 }
-@le:relative;
-@lb:absolute;
-.borderjd(@p){
-  -webkit-border-radius:@p;
-  -moz-border-radius:@p;
-  border-radius:@p;
-}
-.borderjds(@p,@pp,@ppp,@pppp){
-  -webkit-border-radius:@p @pp @ppp @pppp;
-  -moz-border-radius:@p @pp @ppp @pppp;
-  border-radius:@p @pp @ppp @pppp;
-}
+@import url('com.less');
 @toph:5rem;
 header{
   @w:100px;
@@ -84,6 +74,23 @@ header{
       position:@le;
       top:25px;
       left:@lmargin;
+      width:190px;
+      margin-left:10px;
+      .transit(margin-left,1s);
+      overflow: hidden;
+      &:after{
+        content:'';
+        opacity:0;
+        width:0;
+        height:0;
+        .sjx(8px,8px,8px,#fff);
+        position:@lb;
+        right:0px;
+        top:0;
+        bottom:0;
+        margin:auto;
+        .transitt(right,1s,opacity,1s);
+      }
       img{
       @adminimgwh:55px;
         width:@adminimgwh;
@@ -103,6 +110,14 @@ header{
           font-size:0.5rem;
         }
       }
+      &:hover{
+        margin-left:0px;
+        cursor: pointer;
+        &:after{
+          opacity:1;
+          right:10px;
+        }
+      }
     }
     #sj{
       .sj(@sjicon){
@@ -113,6 +128,22 @@ header{
           span{
             display:block;
             font-size:1.5rem;
+            &.zhsjsj{
+              overflow: hidden;
+              height:35px;
+            }
+            &.bysjsj{
+              overflow: hidden;
+              height:35px;
+            }
+            &.byyxsj{
+              overflow: hidden;
+              height:35px;
+            }
+            &.bywscgs{
+              overflow: hidden;
+              height:35px;
+            }
           }
         }
         &>span{
@@ -148,20 +179,42 @@ header{
   }
 }
 @nw:120px;
-.transit(@prop,@time){
-  -webkit-transition: @prop @time;
-  -moz-transition: @prop @time;
-  -ms-transition: @prop @time;
-  -o-transition: @prop @time;
-  transition: @prop @time;
+@iconmarginwx:64px;
+@iconmarginwy:37px;
+.ac{
+  span{
+    background:url(../image/icon.png);
+    &.home{
+      background-position:119px 291-@iconmarginwy;
+    }
+    &.sjzs{
+      background-position:119+@iconmarginwx*4 291-@iconmarginwy;
+    }
+    &.kdgsgl{
+      background-position:119+@iconmarginwx*4 291-@iconmarginwy*3;
+    }
+    &.sjtj{
+      background-position:119+@iconmarginwx*2 291-@iconmarginwy;
+    }
+    &.sjypdb{
+      background-position:119+@iconmarginwx 291-@iconmarginwy;
+    }
+    &.ggtz{
+      background-position:119+@iconmarginwx*2 291-@iconmarginwy;
+    }
+    &.sjdr{
+      background-position:119-@iconmarginwx 291-@iconmarginwy;
+    }
+    &.xtsz{
+      background-position:119+@iconmarginwx*3 291-@iconmarginwy*3;
+    }
+  }
 }
 nav{
   width:@nw;
   z-index:20;
   background:#675d5c;
   &>ul{
-    @iconmarginwx:64px;
-    @iconmarginwy:37px;
     z-index:20;
     &>li{
       border-bottom:2px solid #675d5c;
@@ -175,40 +228,17 @@ nav{
         color:#fff;
         font-size:0.5rem;
         &.active{
-          background:#00ffff;
+          background: @activeBC;
           .borderjds(5px,0,0,5px);
+          .ac;
+          color:#333;
+          text-decoration: none;
         }
         background:#796f6d;
         &:hover{
           color:#fff;
           text-decoration: none;
-          span{
-            background:url(../image/icon.png);
-            &.home{
-            background-position:119px 291-@iconmarginwy;
-            }
-            &.sjzs{
-               background-position:119+@iconmarginwx*4 291-@iconmarginwy;
-             }
-            &.kdgsgl{
-              background-position:119+@iconmarginwx*4 291-@iconmarginwy*3;
-            }
-            &.sjtj{
-              background-position:119+@iconmarginwx*2 291-@iconmarginwy;
-            }
-            &.sjypdb{
-              background-position:119+@iconmarginwx 291-@iconmarginwy;
-            }
-            &.ggtz{
-              background-position:119+@iconmarginwx*2 291-@iconmarginwy;
-            }
-            &.sjdr{
-              background-position:119-@iconmarginwx 291-@iconmarginwy;
-            }
-            &.xtsz{
-              background-position:119+@iconmarginwx*3 291-@iconmarginwy*3;
-            }
-          }
+          .ac;
 
         }
         span{
@@ -251,10 +281,12 @@ nav{
       }
       &.menu-enu{
         position:@le;
+        border-right:0px solid red;
         a{
-          @activeBC:#00ffff;
           &.active{
             background:@activeBC;
+            color:#000;
+            text-decoration:none;
             .borderjd(0);
             &:after{
               display:inline-block;
@@ -275,6 +307,31 @@ nav{
 
         }
       }
+      &.menu-men >a{
+        position: @le;
+        .after{
+          content:'';
+          display:inline-block;
+          width:0;
+          height:0;
+          position: @lb;
+          right:0px;
+          top:0;
+          bottom:0;
+          z-index:1;
+          border-top: 5px solid transparent;
+          border-right: 10px solid #fff;
+          border-bottom: 5px solid transparent;
+          margin:auto 0;
+          .transit(right,1s);
+        }
+        &:hover{
+          .after{
+            right:-10px;
+          }
+
+        }
+      }
       div{
         &.nav-menu{
           position:@lb;
@@ -282,8 +339,8 @@ nav{
           left:120px;
           margin:0;
           width:0;
-          background:#00ffff;
-          z-index:1;
+          background: @activeBC;
+          z-index:2;
           font-size:0.5rem;
           text-align:center;
           display:none;
@@ -297,11 +354,18 @@ nav{
               border-top:1px solid #999;
               margin-top:9px;
             }
+            a{
+              background:none;
+              color:#333;
+              &:hover{
+                color:#00ee00;
+              }
+            }
           }
         }
         .bak{
           display:inline-block;
-          background:#00ffff;
+          background:@activeBC;
           width:10px;
           height:50px;
           position:@lb;
@@ -334,6 +398,8 @@ article{
   position:@lb;
   right:0;
   top:@toph*2;
+  overflow:hidden;
+  overflow-y: auto;
 }
 footer{
 @fh:30px;
@@ -348,4 +414,5 @@ footer{
   position:@lb;
   bottom:0;
   right:0;
+  display:none;
 }

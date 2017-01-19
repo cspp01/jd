@@ -1,38 +1,75 @@
+<div id="maincont" onload="homeload()">
 <section>
-    <div>
-        <h1>本年业务统计</h1>
+    <div id="tit" class="col-lg-2">
+        <h3>本年业务统计</h3>
         <div><span></span>222222</div>
     </div>
-    <div>
+    <div id="main" class="col-lg-12">
 
     </div>
 </section>
 <section>
-    <table>
-        <caption></caption>
-        <tr>
-            <th>123</th>
-            <th>123</th>
-            <th>123</th>
-            <th>123</th>
-        </tr>
-        <tr>
-            <td>123</td>
-            <td>123</td>
-            <td>123</td>
-            <td>123</td>
-        </tr>
-        <tr>
-            <td>123</td>
-            <td>123</td>
-            <td>123</td>
-            <td>123</td>
-        </tr>
-        <tr>
-            <td>123</td>
-            <td>123</td>
-            <td>123</td>
-            <td>123</td>
-        </tr>
+    <table class="col-lg-12">
+        <caption>上传数据公司排名</caption>
     </table>
 </section>
+</div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    // 显示标题，图例和空的坐标轴
+    myChart.setOption({
+        title: {
+            text: ''
+        },
+        tooltip: {},
+        legend: {
+            data:[]
+        },
+        xAxis: {
+            data: []
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: []
+        }]
+    });
+    myChart.showLoading();
+    // 异步加载数据
+    $.get('../json/home.json').done(function (dat) {
+
+        myChart.hideLoading();
+        // 填入数据
+         var data=dat.comData;
+        myChart.setOption({
+            xAxis: {
+                data: data.categories
+            },
+            series: [{
+                // 根据名字对应到相应的系列
+                name: '销量',
+                data: data.data,
+                itemStyle: {
+                    normal: {
+                        color: function (params) {
+                            // build a color map as your need.
+                            var colorList = [
+                                '#7adddd', '#6e84bd', '#db5846', '#6e84bd', '#db5846',
+                                '#7adddd', '#db5846', '#db5846', '#6e84bd', '#7adddd',
+                                '#7adddd', '#6e84bd', '#F4E001', '#F0805A', '#26C0C0'
+                            ];
+                            return colorList[params.dataIndex]
+                        },
+                        label: {
+                            show: true,
+                            position: 'top',
+                            formatter: '{b}\n{c}'
+                        }
+                    }
+                }
+            }]
+        });
+    });
+</script>

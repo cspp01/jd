@@ -1,0 +1,59 @@
+{
+  "comPM":[
+    {
+      "comName":"XXXXXXXXXXXX公司",
+      "data":"22212",
+      "dj":"5"
+    },
+    {
+      "comName":"XXXXXXXXXXXX公司",
+      "data":"22212",
+      "dj":"5"
+    },
+    {
+      "comName":"XXXXXXXXXXXX公司",
+      "data":"22212",
+      "dj":"5"
+    },
+    {
+      "comName":"XXXXXXXXXXXX公司",
+      "data":"22212",
+      "dj":"4"
+    },
+    {
+      "comName":"XXXXXXXXXXXX公司",
+      "data":"22212",
+      "dj":"4"
+    },
+    {
+      "comName":"XXXXXXXXXXXX公司",
+      "data":"22212",
+      "dj":"4"
+    },
+    {
+      "comName":"123",
+      "data":"222",
+      "dj":"5"
+    },
+    {
+      "comName":"XXXXXXXXXXXX公司",
+      "data":"22212",
+      "dj":"3"
+    },
+    {
+      "comName":"XXXXXXXXXXXX公司",
+      "data":"22212",
+      "dj":"3"
+    },
+    {
+      "comName":"XXXXXXXXXXXX公司",
+      "data":"22212",
+      "dj":"1"
+    }
+    ],
+"comData":{
+  "categories": ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
+  "data": [5, 20, 36, 10, 10, 20,5, 20, 36, 10, 10, 20]
+}
+
+}

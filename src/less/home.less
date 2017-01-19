@@ -1,0 +1,102 @@
+#maincont {
+@lb:absolute;
+  @le:relative;
+  .yj(@jd){
+    -webkit-border-radius:@jd;
+    -moz-border-radius:@jd;
+    border-radius:@jd;
+  }
+  section {
+    &:nth-child(1) {
+      height: 400px;
+      #tit {
+        height:100%;
+        padding-top:4rem;
+        h3{
+          width:100%;
+          text-align:center;
+        }
+        div {
+          width:100%;
+          text-align:center;
+          font-size: 2rem;
+          span{
+            @w:30px;
+            display:inline-block;
+            width:@w;
+            height:@w;
+            background:url(../image/icon.png);
+            background-position:70px 30px;
+            margin-right:10px;
+            color:#777777;
+
+          }
+        }
+      }
+      #main{
+        height:400px;
+        position:@lb;
+        right:-120px;
+        canvas{
+        }
+      }
+    }
+    &:nth-child(2) {
+      height: 300px;
+      text-align: center;
+      table {
+        caption{
+          @so:1px solid #ababac;
+          border-top:@so;
+          border-bottom:@so;
+          padding:13px;
+          color:#333;
+          font-weight:500;
+        }
+        table{
+          border-right:1px solid #ababac;
+          position:@le;
+          top:10px;
+          th{
+            text-align: center;
+            padding:10px 0;
+          }
+          td {
+            @djw: 20px;
+            padding: 5px 0;
+            &.dj {
+              span {
+
+                display: inline-block;
+                width: @djw;
+                height: @djw;
+                background: url(../image/icon.png);
+                &.djnum {
+                  background-position: 20px 20px;
+                }
+                &.djk {
+                  background-position: 40px 20px;
+                }
+              }
+
+            }
+            span{
+              display: inline-block;
+              width:@djw;
+              height:@djw;
+              line-height:@djw;
+              .yj(50%);
+              color:#fff;
+              &.pmId{
+                  background:#6e84bd;
+                }
+              &.pmIdTop{
+                background:#db5846;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

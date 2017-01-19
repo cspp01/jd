@@ -1,0 +1,77 @@
+@import url(../com.less);
+/*业务数理统计*/
+#sltjcont{
+  table.sltj{
+    #main{
+      height:24rem;
+      left:-150px;
+      margin-left:50px;
+    }
+  }
+}
+#sjdbcont{
+  text-align:center;
+  .boxp{
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,.5);
+    width:100%;
+    height:100%;
+    display:none;
+    z-index:5;
+    &.op{
+      display:block;
+    }
+  }
+  .box{
+    p{
+      font-size:1.5rem;
+    }
+  }
+  table.sjdb{
+    @h:35px;
+    text-align: center;
+    th{
+      text-align: center;
+    }
+    td{
+      line-height:@h;
+      padding:3px 0;
+    }
+    .metro{
+      li{
+        width:@h;
+        height:@h;
+        padding:0;
+        margin:0px;
+        margin-right:10px;
+        .borderjd(50%);
+        .transit(border,0.5s);
+        span{
+          width:100%;
+          height:100%;
+          display:inline-block;
+          position:@lb;
+          top:0;
+          bottom:0;
+          left:0;
+          right:0;
+          line-height:@h;
+          font-size:15px;
+          .transit(font-size,0.5s);
+          &:before{
+            }
+        }
+        &:hover{
+          span{
+            font-size:20px;
+            &:before{
+            }
+          }
+        }
+      }
+    }
+  }
+  .fy;
+}

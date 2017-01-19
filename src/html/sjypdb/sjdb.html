@@ -1,0 +1,80 @@
+<div id="sjdbcont">
+
+        <div class="box">
+            <span class="close"></span>
+            <p></p>
+        </div>
+    <div class="boxp">
+    </div>
+    <div class="panel panel-default sjzsdata">
+        <div class="panel-heading">
+            <h3 class="panel-title">数据展示</h3>
+        </div>
+        <div class="panel-body">
+                    <div class="row" style="margin: 20px 0px 20px 0px;">
+                        <div class="col-md-12" style="margin-left: -20px;">
+                            <div class="form-group">
+                                <label class="control-label col-md-1" style="font-size: 17px; white-space: nowrap;">选择日期:</label>
+                                <div class="col-md-3" style="">
+                                    <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+                                        <input type="text" class="form-control" name="from">
+                                        <span class="input-group-addon">-</span>
+                                        <input type="text" class="form-control" name="to"> </div>
+                                    <!-- /input-group -->
+                                    <span class="help-block">  </span>
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4" style="text-align: right;">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-primary" type="button">查询</button>
+                                                    </span>
+                                    </div>
+                                    <!-- /input-group -->
+                                </div>
+
+                                <div class="col-md-3" style="text-align: right;">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" href="#ignore" title="忽略">
+                                        忽略</button>
+                                    <button type="button" class="btn btn-primary">
+                                        刷新</button>
+                                    <button class="btn btn-primary " type="button" data-toggle="modal" data-target="#high-select"> 高级
+
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+        <table class="table sjdb tab">
+            <tr>
+                <th>
+                        <label>
+                            <input type="checkbox" value="">
+                        </label>
+                </th>
+                <th>序号</th>
+                <th> 快递单号 </th>
+                <th> 始发地 </th>
+                <th> 目的地 </th>
+                <th> 寄件人 </th>
+                <th> 收件人 </th>
+                <th> 收件人身份证 </th>
+                <th> 货物类型 </th>
+                <th> 比对结果 </th>
+                <th> 处理结果 </th>
+                <th>操作</th>
+            </tr>
+        </table>
+    </div>
+    <ul class="pagination fy">
+        <li><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+</div>
