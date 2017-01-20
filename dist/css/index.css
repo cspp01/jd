@@ -175,6 +175,127 @@ table.tab tr .metro {
   background: #db5846;
 }
 
+.fy {
+  margin: 0;
+  padding: 0;
+}
+.fy li a {
+  border-radius: 50%;
+  margin: 0 3px;
+  color: #8a9ed2;
+}
+.fy li:first-child,
+.fy li:last-child {
+  border: none;
+}
+.fy li:first-child a,
+.fy li:last-child a {
+  border: none;
+}
+.fy li.active a {
+  background: #8a9ed2;
+  border-color: #8a9ed2;
+  color: #fff;
+}
+.clearPadding {
+  padding: 0 5px;
+  line-height: 30px;
+}
+/*nav active颜色*/
+table.tab {
+  text-align: center;
+}
+table.tab tr:first-child {
+  background: #fddede;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+table.tab tr:nth-child(2n+3) {
+  background: #faecea;
+}
+table.tab tr .metro {
+  width: 135px;
+}
+html {
+  font-size: 20px;
+}
+body {
+  background: #8a9ed2;
+  /*.bj{
+    background:url(../image/logo.png);
+    display:inline-block;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    position:@lb;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:730px;
+  }*/
+}
+body img {
+  max-height: 736px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+body h2 {
+  margin-bottom: 100px;
+  text-align: center;
+  margin-top: 50px;
+  color: #8a9ed2;
+}
+body .logoin {
+  width: 30%;
+  height: 50%;
+  background: #fff;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: auto;
+}
+body .logoin form > div {
+  position: relative;
+}
+body .logoin form > div span {
+  position: absolute;
+  float: left;
+  padding-left: 0.9rem;
+  font-size: 0.9rem;
+  line-height: 45px;
+  display: inline-block;
+  color: #999;
+}
+body .logoin input {
+  height: 45px;
+  border-width: 2px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  padding-left: 2.2rem;
+}
+body .logoin input:focus {
+  border-color: #00ce95;
+  box-shadow: 0 0 0px 0px #00ce95;
+}
+body .logoin button {
+  background: #00ce95;
+  height: 45px;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: font-size 0.2s;
+  border-radius: 10px;
+}
+body .logoin button:hover {
+  background: #00ce95;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
 body,
 html,
 h1 {
@@ -279,6 +400,11 @@ header section#top1 #rightNav li:active.hggtz {
 }
 header section#top1 #rightNav li:active.htc {
   background-position: 122px 80px;
+}
+header section#top1 #rightNav li a {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
 }
 header section#top2 {
   background: #8a9ed2;

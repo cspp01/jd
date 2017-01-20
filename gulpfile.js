@@ -17,7 +17,7 @@ var cache = require('gulp-cache');
 var notify = require('gulp-notify');
 /*css编译*/
 gulp.task('less', function() {
-        return gulp.src('src/less/**/*.less')
+        return gulp.src('src/less/**/*.less',!'src/less/logo.less')
             .pipe(plumber())
         .pipe(less())
             .pipe(autoprefixer('last 2 versions', 'last 1 Chrome versions', 'last 2 Explorer versions', 'last 3 Safari versions', 'Firefox >= 20'))
@@ -39,6 +39,16 @@ gulp.task('minifyCss',['less'],function(){
             message:'css压缩完成'
         }));
 
+});
+gulp.task('logo',function(){
+    return gulp.src('src/less/logo.less')
+        .pipe(less())
+        .pipe(minifyCss())
+        .pipe(rename('logo.min.css'))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({
+            message:'logo.css编译完成'
+        }));
 });
 /*html压缩*/
 gulp.task('minifyHtml',function(){
@@ -125,7 +135,8 @@ gulp.task('clean',function(){
 });
 gulp.task('watch', function () {
         livereload.listen();
-       gulp.watch(['src/less/**/*.less'], ['minifyCss']);/*css编译压缩*/
+       gulp.watch(['src/less/**/*.less','!src/less/logo.less'], ['minifyCss']);/*css编译压缩*/
+    gulp.watch(['src/less/logo.less'], ['logo']);/*css编译压缩*/
     gulp.watch(['src/html/**/*.html'], ['minifyHtml']);/*html压缩*/
     gulp.watch(['src/js/**/*.js'], ['minifyJs']);/*js压缩*/
     //gulp.watch(['src/image/*.*'], ['imagemin']);/*j图片压缩*/
@@ -133,5 +144,5 @@ gulp.task('watch', function () {
      });
 /*默认任务*/
 gulp.task('default',['clean'],function(){
-    gulp.run('minifyCss','minifyJs'/*,'imagemin'*/,'minifyHtml','json','zip','watch');
+    gulp.run('minifyCss','logo','minifyJs'/*,'imagemin'*/,'minifyHtml','json','zip','watch');
 });

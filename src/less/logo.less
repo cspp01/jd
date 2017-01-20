@@ -1,0 +1,99 @@
+@import url(com.less);
+html {
+  font-size: 20px;
+}
+body{
+  background:#8a9ed2;
+  /*.bj{
+    background:url(../image/logo.png);
+    display:inline-block;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    position:@lb;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:730px;
+  }*/
+  img{
+    max-height:736px;
+    width:100%;
+    position:@lb;
+    bottom:0;
+    left:0;
+  }
+  h2{
+    margin-bottom:100px;
+    text-align: center;
+    margin-top:50px;
+    color:#8a9ed2;
+  }
+  .logoin{
+    width:30%;
+    height:50%;
+    background:#fff;
+    .borderjd(10px);
+    position:@lb;
+    bottom:100px;
+    left:0;
+    top:0;
+    right:0;
+    margin:auto;
+    @btn:#00ce95;
+    @inputw:45px;
+    form>div {
+      position: @le;
+      padding:0;
+      span {
+        position: @lb;
+        float: left;
+        padding-left: 0.9rem;
+        font-size: 0.9rem;
+        line-height: @inputw;
+        display: inline-block;
+        color: #999;
+      }
+      input {
+        height: 45px;
+        border-width: 2px;
+        .borderjd(10px);
+        font-size: 0.9rem;
+        padding-left: 2.2rem;
+
+        &:focus {
+          border-color: @btn;
+          .box-shadow(0, 0, 0px, 0px, @btn);
+          &+span{
+            color:  @btn;
+          }
+        }
+      }
+      &:last-child{
+        div{
+          display:inline-block;
+          position:@lb;
+          left:0;
+        }
+      span{
+        display:inline-block;
+        position:@lb;
+        right:0;
+      }
+    }
+      button {
+        background: @btn;
+        height: 45px;
+        border: none;
+        color: #fff;
+        font-size: 1rem;
+        .transit(font-size, 0.2s);
+        .borderjd(10px);
+        &:hover {
+          background: #00ce95;
+          font-size: 1.2rem;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
